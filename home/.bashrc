@@ -65,3 +65,6 @@ if [ -f ~/.bash_aliases ]; then
     test -r ~/.bash_aliases && . ~/.bash_aliases
 fi
 PATH=$PATH:~/bin
+
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
