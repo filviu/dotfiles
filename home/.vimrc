@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'vim-scripts/nagios-syntax'
+Plugin 'tejr/vim-nagios'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
