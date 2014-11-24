@@ -26,7 +26,6 @@ Since my dotfiles .bashrc already has those, it's enough to source manually on f
 ```sh
 homeshick clone silviuvulcan/dotfiles
 homeshick clone gmarik/Vundle
-homeshick -v link
 ```
 
 Post-Install steps:
