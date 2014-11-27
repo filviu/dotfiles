@@ -24,8 +24,8 @@ printf '\nsource "$HOME/.homesick/repos/homeshick/completions/homeshick-completi
 Since my dotfiles .bashrc already has those, it's enough to source manually on first deploy...
 
 ```sh
-homeshick clone silviuvulcan/dotfiles
 homeshick clone gmarik/Vundle
+homeshick clone silviuvulcan/dotfiles
 ```
 
 Post-Install steps:
