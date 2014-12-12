@@ -26,7 +26,7 @@ Since my dotfiles .bashrc already has those, it's enough to source manually on f
 ```sh
 homeshick clone gmarik/Vundle
 homeshick clone silviuvulcan/dotfiles
-homeshick clone private/privatedots
+homeshick clone private.server.com/privatedots
 ```
 
 Post-Install steps:
