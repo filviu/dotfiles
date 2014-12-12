@@ -31,6 +31,6 @@ homeshick clone silviuvulcan/dotfiles
 Post-Install steps:
 
 ```sh
-vim "+:BundleInstall"
+vim +:BundleInstall +qall
 ```
 
