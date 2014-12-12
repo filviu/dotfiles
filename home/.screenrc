@@ -3,3 +3,6 @@ defscrollback 10000
 
 hardstatus alwayslastline
 hardstatus string '%{= kw}[ %{= kb}%H%{= kw} ][ %= %{-b kw}%u %-Lw%{= rW}%50> %n%f %t %{-}%+Lw %= ][ %{r}%l%{w} ]%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}'
+
+bind t title bash
+
