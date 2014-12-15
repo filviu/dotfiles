@@ -10,22 +10,12 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
 if [ "$color_prompt" = yes ]; then
     export PS1="[\[\e[01;34m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\] \[\e[01;33m\]\w\[\e[0m\]]\[\e[00;37m\]\\$\[\e[0m\] "
 else
     PS1='\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+unset color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
