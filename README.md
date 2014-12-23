@@ -23,7 +23,11 @@ printf '\nsource "$HOME/.homesick/repos/homeshick/completions/homeshick-completi
 
 Since my dotfiles .bashrc already has those, it's enough to source manually on first deploy...
 
+STEPS
+=====
+
 ```bash
+git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone gmarik/Vundle
 homeshick clone silviuvulcan/dotfiles
