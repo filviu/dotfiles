@@ -31,12 +31,12 @@ git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone gmarik/Vundle
 homeshick clone silviuvulcan/dotfiles
-homeshick clone private.server.com/privatedots
+vim +:BundleInstall +qall
 ```
 
-Post-Install steps:
+Optional steps:
 
 ```sh
-vim +:BundleInstall +qall
+homeshick clone private.server.com/privatedots
 ```
 
