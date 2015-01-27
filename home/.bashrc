@@ -13,7 +13,7 @@ case "$TERM" in
 esac
 
 if [ "$color_prompt" = yes ]; then
-    export PS1="[\[\e[01;34m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;36m\]\h\[\e[0m\] \[\e[01;33m\]\w\[\e[0m\]]\[\e[00;37m\]\\$\[\e[0m\] "
+	export PS1="[\[\e[00;34m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\] \[\e[00;33m\]\w\[\e[0m\]]\[\e[00;37m\]\\$\[\e[0m\] "
 else
     PS1='\u@\h:\w\$ '
 fi
@@ -42,6 +42,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 PATH=$PATH:~/bin
+export MC_SKIN="$HOME/.config/mc/solarized.ini"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
