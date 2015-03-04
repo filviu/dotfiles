@@ -13,6 +13,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tejr/vim-nagios'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'shmay/vim-yaml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
