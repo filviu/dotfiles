@@ -11,9 +11,11 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'tejr/vim-nagios'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'shmay/vim-yaml'
+
+if filereadable(glob("~/.vimrc.localplugins")) 
+	source ~/.vimrc.localplugins
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
