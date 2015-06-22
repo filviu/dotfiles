@@ -58,6 +58,11 @@ if [ -f ~/.bash_aliases ]; then
     test -r ~/.bash_aliases && . ~/.bash_aliases
 fi
 
+# permit untracked bash completions
+if [ -f ~/.bash_completion.local ]; then
+	test -r ~/.bash_completion.local && . ~/.bash_completion.local
+fi
+
 PATH=$PATH:~/bin
 export MC_SKIN="$HOME/.config/mc/solarized.ini"
 
