@@ -69,5 +69,6 @@ export MC_SKIN="$HOME/.config/mc/solarized.ini"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
-homeshick --quiet refresh
+# this runs from tentakel now
+# homeshick --quiet refresh
 
