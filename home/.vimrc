@@ -33,6 +33,8 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
+set pastetoggle=<F2>
+
 set backupdir-=.
 set backupdir^=~/tmp,/tmp
 
