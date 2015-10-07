@@ -16,6 +16,9 @@ shopt -s checkwinsize
 export EDITOR=vim
 export VISUAL=vim
 
+# remove mint/ubuntu command not found message
+unset command_not_found_handle
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 	xterm) color_prompt=yes;;
