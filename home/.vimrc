@@ -38,3 +38,7 @@ set pastetoggle=<F2>
 set backupdir-=.
 set backupdir^=~/tmp,/tmp
 
+if filereadable(glob("~/.vimrc.local")) 
+	source ~/.vimrc.local
+endif
+
