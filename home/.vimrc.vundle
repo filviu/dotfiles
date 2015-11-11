@@ -20,8 +20,4 @@ filetype plugin indent on    " required
 
 " Put your non-Plugin stuff after this line
 
-let g:airline#extensions#tabline#enabled = 1
-
-colorscheme solarized
-let g:solarized_termcolors=256 
 
