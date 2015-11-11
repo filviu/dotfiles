@@ -1,6 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 if filereadable(glob("~/.vimrc.vundle"))
 	source ~/.vimrc.vundle
 
