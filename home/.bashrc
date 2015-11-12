@@ -79,9 +79,13 @@ if [ -f ~/.bash_aliases ]; then
     test -r ~/.bash_aliases && . ~/.bash_aliases
 fi
 
-# permit untracked bash completions
+# custom aliases, settings
 if [ -f ~/.bash_completion.local ]; then
 	test -r ~/.bash_completion.local && . ~/.bash_completion.local
+fi
+
+if [ -f ~/.bashrc.local ]; then
+	test -r ~/.bashrc.local && . ~/.bashrc.local
 fi
 
 PATH=$PATH:~/bin
