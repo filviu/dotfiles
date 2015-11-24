@@ -13,6 +13,7 @@ Plugin 'bling/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/DrawIt'
 
 if filereadable(glob("~/.vimrc.localplugins")) 
 	source ~/.vimrc.localplugins
