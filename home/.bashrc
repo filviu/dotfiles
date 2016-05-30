@@ -12,6 +12,11 @@ HISTFILESIZE=500000
 # update the values of LINES and COLUMNS
 shopt -s checkwinsize
 
+#LANGUAGE ERRORS
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # set default editor
 export EDITOR=vim
 export VISUAL=vim
