@@ -13,9 +13,9 @@ HISTFILESIZE=500000
 shopt -s checkwinsize
 
 #LANGUAGE ERRORS
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+#export LANGUAGE=en_US.UTF-8
+#export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
 
 # set default editor
 export EDITOR=vim
@@ -101,6 +101,4 @@ export MC_SKIN="$HOME/.config/mc/solarized.ini"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
-# this runs from tentakel now
-# homeshick --quiet refresh
 
