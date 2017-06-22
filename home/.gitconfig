@@ -3,3 +3,11 @@
 	name = silviuvulcan
 [color]
 	ui = true
+
+[alias]
+   s = status
+   co = checkout
+   lg = log --pretty=format:'%C(bold green)%h%C(reset) %C(cyan)%ad%C(reset) %C(white)%s%C(reset) %C(blue)|%C(reset) %C(bold blue)%an%C(reset) %C(bold yellow)%d%C(reset)' --graph --date=short
+   hist = log --graph --format=format:'%C(bold green)%h%C(reset) - %C(bold magenta)(%ar)%C(reset) %C(white)%s%C(reset) %C(blue)|%C(reset) %C(bold blue)%an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+   tags = log --pretty=format:'%C(bold green)%h%C(reset)%C(normal)%d%C(reset)' --graph --date=short
+
