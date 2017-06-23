@@ -79,6 +79,10 @@ then
   fi
 fi
 
+# git prompt
+export GIT_PROMPT_ONLY_IN_REPO=1
+[ -f ~/.bash-git-prompt/gitprompt.sh ] && source ~/.bash-git-prompt/gitprompt.sh
+
 if [ -f ~/.LESS_TERMCAP ]; then
 	test -r ~/.LESS_TERMCAP && . ~/.LESS_TERMCAP
 fi
