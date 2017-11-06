@@ -26,3 +26,4 @@ Rows=30
 Transparency=low
 OpaqueWhenFocused=yes
 ScrollbackLines=9999
+Scrollbar=none
