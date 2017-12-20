@@ -1,25 +1,20 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+export HISTSIZE=50000
+export HISTFILESIZE=500000
+export EDITOR=vim
+export VISUAL=vim
+export MC_SKIN="$HOME/.config/mc/solarized.ini"
+export GIT_PROMPT_ONLY_IN_REPO=1
+export GIT_PROMPT_THEME=Solarized
+export PATH=$PATH:~/bin
+
 # append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=50000
-HISTFILESIZE=500000
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS
 shopt -s checkwinsize
-
-#LANGUAGE ERRORS
-#export LANGUAGE=en_US.UTF-8
-#export LANG=en_US.UTF-8
-#export LC_ALL=en_US.UTF-8
-
-# set default editor
-export EDITOR=vim
-export VISUAL=vim
 
 # remove mint/ubuntu command not found message
 unset command_not_found_handle
@@ -79,9 +74,11 @@ then
   fi
 fi
 
-# git prompt
-export GIT_PROMPT_ONLY_IN_REPO=1
-[ -f ~/.bash-git-prompt/gitprompt.sh ] && source ~/.bash-git-prompt/gitprompt.sh
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+
+# git prompt, source it from .bashrc.local or manually when needed
+#[ -f ~/.bash-git-prompt/gitprompt.sh ] && source ~/.bash-git-prompt/gitprompt.sh
 
 if [ -f ~/.LESS_TERMCAP ]; then
 	test -r ~/.LESS_TERMCAP && . ~/.LESS_TERMCAP
@@ -99,11 +96,4 @@ fi
 if [ -f ~/.bashrc.local ]; then
 	test -r ~/.bashrc.local && . ~/.bashrc.local
 fi
-
-PATH=$PATH:~/bin
-export MC_SKIN="$HOME/.config/mc/solarized.ini"
-
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-
 
