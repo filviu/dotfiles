@@ -8,6 +8,7 @@ export VISUAL=vim
 export MC_SKIN="$HOME/.config/mc/solarized.ini"
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Solarized
+export SSH_AUTH_SOCK="C:\usr\keeagent.sock"
 export PATH=$PATH:~/bin
 
 # append to the history file, don't overwrite it
