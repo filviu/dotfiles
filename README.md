@@ -3,7 +3,7 @@ my dotfiles repo to use with homeshick; feel free to browse around, take anythin
 # Installation Steps
 
 ```bash
-git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+git clone --recursive https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone gmarik/Vundle
 homeshick clone silviuvulcan/dotfiles
