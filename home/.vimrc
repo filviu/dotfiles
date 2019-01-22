@@ -3,7 +3,7 @@ if filereadable(glob("~/.vimrc.vundle"))
 
 	let g:airline#extensions#tabline#enabled = 1
 
-	colorscheme solarized
+	colorscheme monokai
 	let g:solarized_termcolors=256 
 endif
 
