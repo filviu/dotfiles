@@ -2,9 +2,12 @@ if filereadable(glob("~/.vimrc.vundle"))
 	source ~/.vimrc.vundle
 
 	let g:airline#extensions#tabline#enabled = 1
+	let g:airline_theme='base16_monokai'
+	let g:airline_powerline_fonts = 1
 
 	colorscheme monokai
-	let g:solarized_termcolors=256 
+
+	let g:monokai_termcolors=256 
 endif
 
 syntax on
@@ -16,7 +19,6 @@ set background=dark
 
 set backupdir-=.
 set backupdir^=~/tmp,/tmp
-
 
 
 if filereadable(glob("~/.vimrc.local")) 

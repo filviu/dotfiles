@@ -10,9 +10,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'sickill/vim-monokai'
+Plugin 'crusoexia/vim-monokai'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'scrooloose/syntastic'
 Plugin 'chase/vim-ansible-yaml'
