@@ -6,6 +6,7 @@ my dotfiles repo to use with homeshick; feel free to browse around, take anythin
 git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone gmarik/Vundle
+homeshick clone chris-marsh/pureline
 homeshick clone silviuvulcan/dotfiles
 vim +:BundleInstall +qall
 ```
