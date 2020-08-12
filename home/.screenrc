@@ -6,3 +6,5 @@ hardstatus string '%{= kw}[ %{= kb}%H%{= kw} ][ %= %{-b kw}%u %-Lw%{= rW}%50> %n
 
 bind t title bash
 
+# This line makes Detach and Re-attach without losing the regions/windows layout
+layout save default
