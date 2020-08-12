@@ -13,7 +13,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'vim-scripts/DrawIt'
-Plugin 'scrooloose/syntastic'
 Plugin 'chase/vim-ansible-yaml'
 
 if filereadable(glob("~/.vimrc.localplugins")) 

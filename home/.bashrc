@@ -1,10 +1,21 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export HISTSIZE=50000
-export HISTFILESIZE=500000
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+HISTSIZE=50000
+HISTFILESIZE=500000
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 export EDITOR=vim
 export VISUAL=vim
+
 export MC_SKIN="$HOME/.config/mc/solarized.ini"
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Solarized
@@ -58,6 +69,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 # GRC colorizes nifty unix tools all over the place
 if $(grc &>/dev/null)
