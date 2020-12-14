@@ -19,7 +19,7 @@ export VISUAL=vim
 export MC_SKIN="$HOME/.config/mc/solarized.ini"
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Solarized
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~.local/bin/
 
 # append to the history file, don't overwrite it
 shopt -s histappend

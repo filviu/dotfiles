@@ -13,3 +13,5 @@
 
 [include]
    path = .gitconfig-credentials
+[pull]
+	rebase = false
