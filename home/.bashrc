@@ -117,3 +117,7 @@ if [ -f ~/.bashrc.local ]; then
 	test -r ~/.bashrc.local && . ~/.bashrc.local
 fi
 
+if [ -f ~/.bashrc.todo ]; then
+	test -r ~/.bashrc.todo && . ~/.bashrc.todo
+fi
+
