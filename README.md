@@ -7,6 +7,7 @@ homeshick clone gmarik/Vundle
 homeshick clone chris-marsh/pureline
 homeshick clone silviuvulcan/dotfiles
 vim +:BundleInstall +qall
+cp -L ~/.config/mc/ini.orig ~/.config/mc/ini
 ```
 
 Optional steps:
