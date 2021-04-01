@@ -13,8 +13,13 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export EDITOR=vim
-export VISUAL=vim
+if [ "$TERM_PROGRAM" == "vscode" ]; then
+    export EDITOR="code --wait"
+    export VISUAL="code --wait"
+else
+    export EDITOR=vim
+    export VISUAL=vim
+fi
 
 export MC_SKIN="$HOME/.config/mc/solarized.ini"
 export GIT_PROMPT_ONLY_IN_REPO=1
@@ -32,18 +37,18 @@ unset command_not_found_handle
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-	xterm) color_prompt=yes;;
-	xterm-color) color_prompt=yes;;
-	xterm-256color) color_prompt=yes;;
-	putty-256color) color_prompt=yes;;
-	cygwin) color_prompt=yes;;
+    xterm) color_prompt=yes;;
+    xterm-color) color_prompt=yes;;
+    xterm-256color) color_prompt=yes;;
+    putty-256color) color_prompt=yes;;
+    cygwin) color_prompt=yes;;
 esac
 
 if [ "$color_prompt" = yes ]; then
-	export PS1="[\[\e[00;34m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\] \[\e[00;33m\]\w\[\e[0m\]]\[\e[00;37m\]\\$\[\e[0m\] "
-	if [ "$TERM" != "linux" ] && [ -f ~/pureline/pureline ]; then
-	    source ~/pureline/pureline ~/.pureline.conf
-    	fi
+    export PS1="[\[\e[00;34m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\] \[\e[00;33m\]\w\[\e[0m\]]\[\e[00;37m\]\\$\[\e[0m\] "
+    if [ "$TERM" != "linux" ] && [ -f ~/pureline/pureline ]; then
+        source ~/pureline/pureline ~/.pureline.conf
+        fi
 else
     PS1='\u@\h:\w\$ '
 fi
@@ -61,9 +66,9 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-	if [ -z "$LS_COLORS" ]; then
-		test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	fi
+    if [ -z "$LS_COLORS" ]; then
+        test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    fi
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -97,11 +102,8 @@ fi
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
-# git prompt, source it from .bashrc.local or manually when needed
-#[ -f ~/.bash-git-prompt/gitprompt.sh ] && source ~/.bash-git-prompt/gitprompt.sh
-
 if [ -f ~/.LESS_TERMCAP ]; then
-	test -r ~/.LESS_TERMCAP && . ~/.LESS_TERMCAP
+    test -r ~/.LESS_TERMCAP && . ~/.LESS_TERMCAP
 fi
 
 if [ -f ~/.bash_aliases ]; then
@@ -110,14 +112,13 @@ fi
 
 # custom aliases, settings
 if [ -f ~/.bash_completion.local ]; then
-	test -r ~/.bash_completion.local && . ~/.bash_completion.local
+    test -r ~/.bash_completion.local && . ~/.bash_completion.local
 fi
 
 if [ -f ~/.bashrc.local ]; then
-	test -r ~/.bashrc.local && . ~/.bashrc.local
+    test -r ~/.bashrc.local && . ~/.bashrc.local
 fi
 
 if [ -f ~/.bashrc.todo ]; then
-	test -r ~/.bashrc.todo && . ~/.bashrc.todo
+    test -r ~/.bashrc.todo && . ~/.bashrc.todo
 fi
-
