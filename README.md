@@ -15,3 +15,8 @@ Optional steps:
 homeshick clone private.server.com/privatedots
 ```
 
+Dependencies:
+
+```sh
+git grc mc vim
+```
