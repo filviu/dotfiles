@@ -16,6 +16,7 @@ shopt -s checkwinsize
 if [ "$TERM_PROGRAM" == "vscode" ]; then
     export EDITOR="code --wait"
     export VISUAL="code --wait"
+    source /etc/bash_completion
 else
     export EDITOR=vim
     export VISUAL=vim
@@ -25,12 +26,6 @@ export MC_SKIN="$HOME/.config/mc/solarized.ini"
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Solarized
 export PATH=$PATH:~/bin:~.local/bin/
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS
-shopt -s checkwinsize
 
 # remove mint/ubuntu command not found message
 unset command_not_found_handle
@@ -48,7 +43,7 @@ if [ "$color_prompt" = yes ]; then
     export PS1="[\[\e[00;34m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\] \[\e[00;33m\]\w\[\e[0m\]]\[\e[00;37m\]\\$\[\e[0m\] "
     if [ "$TERM" != "linux" ] && [ -f ~/pureline/pureline ]; then
         source ~/pureline/pureline ~/.pureline.conf
-        fi
+    fi
 else
     PS1='\u@\h:\w\$ '
 fi
@@ -102,23 +97,26 @@ fi
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
-if [ -f ~/.LESS_TERMCAP ]; then
-    test -r ~/.LESS_TERMCAP && . ~/.LESS_TERMCAP
+if command -v hcloud &> /dev/null; then
+    source <(hcloud completion bash)
 fi
 
-if [ -f ~/.bash_aliases ]; then
-    test -r ~/.bash_aliases && . ~/.bash_aliases
+if command -v kubectl &> /dev/null; then
+    source <(kubectl completion bash)
+    complete -F __start_kubectl k
+    alias k="kubectl"
+    alias ksy="kubectl -n kube-system"
+    alias kgp="kubectl get pods"
+    alias kgs="kubectl get services"
 fi
+
+source ~/.LESS_TERMCAP 2>/dev/null
+source ~/.bash_aliases 2>/dev/null
 
 # custom aliases, settings
-if [ -f ~/.bash_completion.local ]; then
-    test -r ~/.bash_completion.local && . ~/.bash_completion.local
-fi
+source ~/.bash_completion.local 2>/dev/null
+source ~/.bashrc.local 2>/dev/null
+source ~/.bashrc.todo 2>/dev/null
 
-if [ -f ~/.bashrc.local ]; then
-    test -r ~/.bashrc.local && . ~/.bashrc.local
-fi
-
-if [ -f ~/.bashrc.todo ]; then
-    test -r ~/.bashrc.todo && . ~/.bashrc.todo
-fi
+# exit with ERRORLEVEL 0 - otherwise pureline show errors from above sources
+echo >/dev/null
