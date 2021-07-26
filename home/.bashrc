@@ -16,7 +16,8 @@ shopt -s checkwinsize
 if [ "$TERM_PROGRAM" == "vscode" ]; then
     export EDITOR="code --wait"
     export VISUAL="code --wait"
-    source /etc/bash_completion
+    source /etc/bash_completion 2>/dev/null
+    source /etc/profile.d/bash_completion.sh 2>/dev/null
 else
     export EDITOR=vim
     export VISUAL=vim
