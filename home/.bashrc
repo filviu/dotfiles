@@ -1,13 +1,15 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# append to the history file, don't overwrite it
+shopt -s histappend
+
 # don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoredups
+HISTTIMEFORMAT="%d/%m/%y %T "
 HISTSIZE=50000
 HISTFILESIZE=500000
 
-# append to the history file, don't overwrite it
-shopt -s histappend
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
