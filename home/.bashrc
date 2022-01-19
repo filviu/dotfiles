@@ -17,7 +17,7 @@ shopt -s checkwinsize
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
+    . /etc/bashrc
 fi
 
 if [ "$TERM_PROGRAM" == "vscode" ]; then
