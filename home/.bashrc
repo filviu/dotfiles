@@ -13,6 +13,11 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
 if [ "$TERM_PROGRAM" == "vscode" ]; then
     export EDITOR="code --wait"
     export VISUAL="code --wait"
