@@ -84,11 +84,9 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # GRC colorizes nifty unix tools all over the place
-if $(grc &>/dev/null)
-then
+if command -v grc &> /dev/null; then
   GRC=`which grc`
-  if [ "$TERM" != dumb ] && [ -n GRC ]
-  then
+  if [ "$TERM" != dumb ] && [ -n GRC ]; then
     alias colourify="$GRC -es --colour=auto"
     alias configure='colourify ./configure'
     alias diff='colourify diff'
@@ -118,13 +116,14 @@ if command -v kubectl &> /dev/null; then
     alias kgs="kubectl get services"
 fi
 
-source ~/.LESS_TERMCAP 2>/dev/null
-source ~/.bash_aliases 2>/dev/null
+if command -v minikube &>/dev/null; then
+  eval "$(minikube completion bash)"
+fi
+
+source ~/.LESS_TERMCAP 2>/dev/null || true
+source ~/.bash_aliases 2>/dev/null || true
 
 # custom aliases, settings
-source ~/.bash_completion.local 2>/dev/null
-source ~/.bashrc.local 2>/dev/null
-source ~/.bashrc.todo 2>/dev/null
-
-# exit with ERRORLEVEL 0 - otherwise pureline show errors from above sources
-echo >/dev/null
+source ~/.bash_completion.local 2>/dev/null || true
+source ~/.bashrc.local 2>/dev/null || true
+source ~/.bashrc.todo 2>/dev/null || true
