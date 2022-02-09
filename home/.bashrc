@@ -10,7 +10,6 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 HISTSIZE=50000
 HISTFILESIZE=500000
 
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
