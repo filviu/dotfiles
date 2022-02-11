@@ -123,6 +123,10 @@ if command -v aws_completer &>/dev/null; then
     complete -C 'aws_completer' aws
 fi
 
+if command -v eksctl &>/dev/null; then
+    . <(eksctl completion bash)
+fi
+
 source ~/.LESS_TERMCAP 2>/dev/null || true
 source ~/.bash_aliases 2>/dev/null || true
 
