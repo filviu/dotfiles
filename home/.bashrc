@@ -119,6 +119,10 @@ if command -v minikube &>/dev/null; then
   eval "$(minikube completion bash)"
 fi
 
+if command -v aws_completer &>/dev/null; then
+    complete -C 'aws_completer' aws
+fi
+
 source ~/.LESS_TERMCAP 2>/dev/null || true
 source ~/.bash_aliases 2>/dev/null || true
 
