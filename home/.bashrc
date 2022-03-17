@@ -131,6 +131,10 @@ if command -v helm &>/dev/null; then
     source <(helm completion bash)
 fi
 
+if command -v terraform &>/dev/null; then
+    complete -C /usr/bin/terraform terraform
+fi
+
 source ~/.LESS_TERMCAP 2>/dev/null || true
 source ~/.bash_aliases 2>/dev/null || true
 
