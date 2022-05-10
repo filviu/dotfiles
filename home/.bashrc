@@ -105,12 +105,12 @@ fi
 
 if [ -d "$HOME/.bookmarks" ]; then
     export CDPATH=".:$HOME/.bookmarks:/"
-    alias goto="cd -P"
+    alias {g,go,goto}="cd -P"
     _goto()
     {
         local IFS=$'\n'
         COMPREPLY=( $( compgen -W "$(/bin/ls ~/.bookmarks)" -- ${COMP_WORDS[COMP_CWORD]}))
-    } && complete -F _goto goto
+    } && complete -F _goto goto go g
 fi
 
 # pg-up/down autocompletion
