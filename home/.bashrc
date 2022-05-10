@@ -99,6 +99,25 @@ if command -v grc &> /dev/null; then
   fi
 fi
 
+# bookmarks - inspired from
+# https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
+# https://twitter.com/mattn_jp/status/1434192554036137995
+
+if [ -d "$HOME/.bookmarks" ]; then
+    export CDPATH=".:$HOME/.bookmarks:/"
+    alias goto="cd -P"
+    _goto()
+    {
+        local IFS=$'\n'
+        COMPREPLY=( $( compgen -W "$(/bin/ls ~/.bookmarks)" -- ${COMP_WORDS[COMP_CWORD]}))
+    } && complete -F _goto goto
+fi
+
+# pg-up/down autocompletion
+# https://superuser.com/questions/171999/smart-tab-completion-for-directories
+bind '"\e[6~": menu-complete'
+bind '"\e[5~": menu-complete-backward'
+
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
