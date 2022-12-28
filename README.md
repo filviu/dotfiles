@@ -5,7 +5,7 @@ git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshi
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone gmarik/Vundle
 homeshick clone chris-marsh/pureline
-homeshick clone silviuvulcan/dotfiles
+homeshick clone filviu/dotfiles
 vim +:BundleInstall +qall
 cp -L ~/.config/mc/ini.orig ~/.config/mc/ini
 ```
