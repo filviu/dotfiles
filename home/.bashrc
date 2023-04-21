@@ -3,12 +3,15 @@
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+shopt -s cmdhist
 
 # don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoredups
 HISTTIMEFORMAT="%d/%m/%y %T "
-HISTSIZE=50000
+HISTSIZE=100000
 HISTFILESIZE=500000
+HISTFILE="$HOME/.bash_history"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
