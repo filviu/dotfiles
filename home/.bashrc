@@ -35,7 +35,7 @@ fi
 export MC_SKIN="$HOME/.config/mc/solarized.ini"
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Solarized
-export PATH=$PATH:~/bin:~/.local/bin/
+export PATH=$PATH:~/bin:~/.local/bin/:~/.cargo/bin/
 
 # remove mint/ubuntu command not found message
 unset command_not_found_handle
@@ -157,6 +157,10 @@ if command -v terraform &>/dev/null; then
     complete -C /usr/bin/terraform terraform
 fi
 
+if command -v atuin&>/dev/null; then
+    eval "$(atuin init bash)"
+fi
+
 source ~/.LESS_TERMCAP 2>/dev/null || true
 source ~/.bash_aliases 2>/dev/null || true
 
@@ -164,3 +168,5 @@ source ~/.bash_aliases 2>/dev/null || true
 source ~/.bash_completion.local 2>/dev/null || true
 source ~/.bashrc.local 2>/dev/null || true
 source ~/.bashrc.todo 2>/dev/null || true
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
