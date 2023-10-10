@@ -158,7 +158,7 @@ if command -v terraform &>/dev/null; then
 fi
 
 if command -v atuin&>/dev/null; then
-    eval "$(atuin init bash)"
+    eval "$(atuin init bash --disable-up-arrow)"
 fi
 
 source ~/.LESS_TERMCAP 2>/dev/null || true
