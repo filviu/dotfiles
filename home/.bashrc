@@ -157,7 +157,7 @@ if command -v terraform &>/dev/null; then
     complete -C /usr/bin/terraform terraform
 fi
 
-if command -v atuin&>/dev/null; then
+if command -v atuin &>/dev/null; then
     eval "$(atuin init bash --disable-up-arrow)"
 fi
 
