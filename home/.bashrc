@@ -157,10 +157,6 @@ if command -v terraform &>/dev/null; then
     complete -C /usr/bin/terraform terraform
 fi
 
-if command -v atuin &>/dev/null; then
-    eval "$(atuin init bash --disable-up-arrow)"
-fi
-
 source ~/.LESS_TERMCAP 2>/dev/null || true
 source ~/.bash_aliases 2>/dev/null || true
 
@@ -170,3 +166,7 @@ source ~/.bashrc.local 2>/dev/null || true
 source ~/.bashrc.todo 2>/dev/null || true
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
+if command -v atuin &>/dev/null; then
+    eval "$(atuin init bash --disable-up-arrow)"
+fi
