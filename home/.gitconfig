@@ -1,6 +1,6 @@
 [user]
-	email = silviuvulcan@users.noreply.github.com
-	name = silviuvulcan
+	email = 2470335+filviu@users.noreply.github.com
+	name = filviu
 [color]
 	ui = true
 
@@ -15,3 +15,5 @@
    path = .gitconfig-credentials
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
