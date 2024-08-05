@@ -21,3 +21,10 @@ Dependencies:
 ```sh
 git grc mc vim
 ```
+
+ble.sh - https://github.com/akinomyoga/ble.sh
+
+```
+curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -
+mv ble-nightly ~/.local/share/blesh
+```
