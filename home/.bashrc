@@ -102,6 +102,8 @@ if command -v grc &> /dev/null; then
   fi
 fi
 
+[[ -f ~/.local/share/blesh/ble.sh ]] && source ~/.local/share/blesh/ble.sh
+
 # bookmarks - inspired from
 # https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
 # https://twitter.com/mattn_jp/status/1434192554036137995
