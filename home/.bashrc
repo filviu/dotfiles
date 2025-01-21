@@ -32,7 +32,7 @@ else
     export VISUAL=vim
 fi
 
-export MC_SKIN="$HOME/.config/mc/solarized.ini"
+export MC_SKIN="$HOME/.config/mc/catppuccin.ini"
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Solarized
 export PATH=$PATH:~/bin:~/.local/bin/:~/.cargo/bin/
