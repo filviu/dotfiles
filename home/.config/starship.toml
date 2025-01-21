@@ -326,8 +326,8 @@ show_always = true
 style_root = "fg:red bg:surface2"
 style_user = "fg:green bg:surface2"
 [username.aliases]
-daystorm = "󰝴"
-user = "󰝴"
+daystorm = "󰄛"
+user = "󰄛"
 root = "󰱯"
 
 [zig]
