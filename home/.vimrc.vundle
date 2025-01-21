@@ -7,16 +7,17 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'catppuccin/vim'
 
 if filereadable(glob("~/.vimrc.localplugins")) 
-	source ~/.vimrc.localplugins
+    source ~/.vimrc.localplugins
 endif
 
 " All of your Plugins must be added before the following line
