@@ -51,9 +51,6 @@ esac
 
 if [ "$color_prompt" = yes ]; then
     export PS1="[\[\e[00;34m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\] \[\e[00;33m\]\w\[\e[0m\]]\[\e[00;37m\]\\$\[\e[0m\] "
-    if [ "$TERM" != "linux" ] && [ -f ~/pureline/pureline ]; then
-        source ~/pureline/pureline ~/.pureline.conf
-    fi
 else
     PS1='\u@\h:\w\$ '
 fi
@@ -176,3 +173,6 @@ if command -v atuin &>/dev/null; then
     . <(atuin gen-completions --shell bash)
 fi
 
+if command -v starship &>/dev/null; then
+    eval "$(starship init bash)"
+fi
