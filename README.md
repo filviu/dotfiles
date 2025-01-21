@@ -24,7 +24,15 @@ git grc mc vim
 
 ble.sh - https://github.com/akinomyoga/ble.sh
 
-```
+```bash
 curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -
 mv ble-nightly ~/.local/share/blesh
 ```
+
+starship - https://starship.rs/
+
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
+
+optional atuin - https://atuin.sh/
