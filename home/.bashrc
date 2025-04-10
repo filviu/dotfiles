@@ -168,7 +168,7 @@ source ~/.bashrc.todo 2>/dev/null || true
 
 source "$HOME/.cargo/env" 2>/dev/null || true
 
-if command -v atuin &>/dev/null; then
+if command -v "$HOME/.atuin/bin/atuin" &>/dev/null; then
     . "$HOME/.atuin/bin/env"
     eval "$(atuin init bash --disable-up-arrow)"
     . <(atuin gen-completions --shell bash)
