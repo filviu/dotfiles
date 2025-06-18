@@ -32,7 +32,7 @@ else
     export VISUAL=vim
 fi
 
-export MC_SKIN="$HOME/.config/mc/solarized.ini"
+export MC_SKIN="$HOME/.config/mc/jult.ini"
 export PATH=$PATH:~/bin:~/.local/bin/:~/.cargo/bin/
 
 # remove mint/ubuntu command not found message
