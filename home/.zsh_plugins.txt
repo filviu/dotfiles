@@ -1,0 +1,9 @@
+# popular fish-like plugins
+zsh-users/zsh-autosuggestions
+
+zdharma-continuum/fast-syntax-highlighting kind:defer
+
+
+# set up Zsh completions with plugins
+mattmc3/ez-compinit
+zsh-users/zsh-completions kind:fpath path:src
