@@ -21,7 +21,7 @@ mouse_move_pages_viewer=true
 mouse_close_dialog=false
 fast_refresh=false
 drop_menus=false
-wrap_mode=true
+wrap_mode=false
 old_esc_mode=true
 cd_symlinks=true
 show_all_if_ambiguous=false
@@ -47,7 +47,7 @@ editor_option_save_position=true
 editor_option_auto_para_formatting=false
 editor_option_typewriter_wrap=false
 editor_edit_confirm_save=true
-editor_syntax_highlighting=false
+editor_syntax_highlighting=true
 editor_persistent_selections=true
 editor_drop_selection_on_copy=true
 editor_cursor_beyond_eol=false
@@ -62,6 +62,7 @@ editor_group_undo=false
 editor_state_full_filename=false
 editor_ask_filename_before_edit=false
 nice_rotating_dash=true
+shadows=true
 mcview_remember_file_position=false
 auto_fill_mkdir_name=true
 copymove_persistent_attr=true
@@ -74,7 +75,7 @@ num_history_items_recorded=60
 vfs_timeout=60
 ftpfs_directory_timeout=900
 ftpfs_retry_seconds=30
-fish_directory_timeout=900
+shell_directory_timeout=900
 editor_tab_spacing=8
 editor_word_wrap_line_length=72
 editor_option_save_mode=0
@@ -83,10 +84,7 @@ editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
 skin=default
-
 filepos_max_saved_entries=1024
-
-shadows=true
 
 [Layout]
 output_lines=0

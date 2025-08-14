@@ -1,5 +1,6 @@
 
 export PATH=$PATH:~/bin
+export MC_SKIN="$HOME/.config/mc/jult.ini"
 
 alias mc="SHELL=/bin/bash mc"
 alias ll="ls -l --color=auto"
