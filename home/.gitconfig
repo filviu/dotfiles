@@ -1,8 +1,15 @@
 [user]
-	email = 2470335+filviu@users.noreply.github.com
-	name = filviu
+   email = 2470335+filviu@users.noreply.github.com
+   name = filviu
+
 [color]
-	ui = true
+   ui = true
+
+[core]
+	excludesfile = ~/.gitignore
+
+[credential]
+	useHttpPath = true
 
 [alias]
    s = status
@@ -13,12 +20,16 @@
 
 [include]
    path = .gitconfig-credentials
+   path = .gitconfig-local
+
 [pull]
-	rebase = false
+   rebase = false
+
 [init]
-	defaultBranch = main
+   defaultBranch = main
+
 [push]
-	autoSetupRemote = true
+   autoSetupRemote = true
 
 [filter "lfs"]
         required = true

@@ -1,6 +1,67 @@
-add_newline = false
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
 command_timeout = 1000
-format = "[](surface1)$os[](bg:surface2 fg:surface1)$username$sudo[](bg:overlay0 fg:surface2)$hostname[](bg:mauve fg:overlay0)$directory[](fg:mauve bg:peach)$c$dart$dotnet$elixir$elm$erlang$golang$haskell$haxe$java$julia$kotlin$lua$nim$nodejs$rlang$ruby$rust$perl$php$python$scala$swift$zig$package$git_branch[](fg:peach bg:yellow)$git_status[](fg:yellow bg:teal)$container$direnv$nix_shell$cmd_duration$jobs$shlvl$status$character"
+
+continuation_prompt = "[▸▹ ](dimmed white)"
+
+format = """
+[](surface1)\
+$os\
+[](bg:surface2 fg:surface1)\
+$username$sudo\
+[](bg:overlay0 fg:surface2)\
+$hostname\
+[](bg:blue fg:overlay0)\
+$kubernetes\
+[](bg:mauve fg:blue)\
+$directory\
+[](fg:mauve bg:peach)\
+$c\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$haxe\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$rlang\
+$ruby\
+$rust\
+$perl\
+$php\
+$python\
+$scala\
+$swift\
+$zig\
+$package\
+$git_branch\
+[](fg:peach bg:yellow)\
+$git_status\
+[](fg:yellow bg:teal)\
+$container\
+$direnv\
+$nix_shell\
+$cmd_duration\
+$jobs\
+$shlvl\
+$status\
+$fill\
+$time\
+\n$character\
+"""
+
+#right_format = """
+#$time
+#"""
+
 palette = "catppuccin_mocha"
 
 [c]
@@ -10,9 +71,8 @@ symbol = ""
 
 [character]
 disabled = false
-error_symbol = "(fg:red bg:pink)[](fg:pink) "
-format = "$symbol"
-success_symbol = "[](fg:blue) "
+success_symbol = '[](bold fg:blue)'
+error_symbol = '[](bold fg:color_red)'
 
 [cmd_duration]
 format = "[  $duration]($style)"
@@ -94,6 +154,9 @@ format = "[ $symbol]($style)"
 style = "fg:base bg:peach"
 symbol = ""
 
+[fill]
+symbol = ' '
+
 [git_branch]
 format = "[ $symbol $branch]($style)"
 style = "fg:base bg:peach"
@@ -156,6 +219,16 @@ symbol = ""
 format = "[ $symbol]($style)"
 style = "fg:base bg:peach"
 symbol = ""
+
+[kubernetes]
+format = "[ $symbol ($cluster)]($style)"
+style = "fg:base bg:blue"
+detect_folders = [ "k8s" ]
+disabled = false
+contexts = [
+{ context_pattern = ".*stage.*", style = "fg:prev_fg bg:prev_bg italic", symbol = "󱁤 "  },
+{ context_pattern = ".*prod.*", style = "fg:text bg:prev_bg bold", symbol = "󱃾 " },
+]
 
 [lua]
 format = "[ $symbol]($style)"
@@ -223,34 +296,6 @@ format = "[ $version]($style)"
 style = "fg:base bg:peach"
 version_format = "$raw"
 
-[palettes.catppuccin_mocha]
-base = "#1e1e2e"
-blue = "#89b4fa"
-crust = "#11111b"
-flamingo = "#f2cdcd"
-green = "#a6e3a1"
-lavender = "#b4befe"
-mantle = "#181825"
-maroon = "#eba0ac"
-mauve = "#cba6f7"
-overlay0 = "#6c7086"
-overlay1 = "#7f849c"
-overlay2 = "#9399b2"
-peach = "#fab387"
-pink = "#f5c2e7"
-red = "#f38ba8"
-rosewater = "#f5e0dc"
-sapphire = "#74c7ec"
-sky = "#89dceb"
-subtext0 = "#a6adc8"
-subtext1 = "#bac2de"
-surface0 = "#313244"
-surface1 = "#45475a"
-surface2 = "#585b70"
-teal = "#94e2d5"
-text = "#cdd6f4"
-yellow = "#f9e2af"
-
 [perl]
 format = "[ $symbol]($style)"
 style = "fg:base bg:peach"
@@ -262,7 +307,7 @@ style = "fg:base bg:peach"
 symbol = "󰌟"
 
 [python]
-format = "[ $symbol]($style)"
+format = "[ $symbol]($style)[🔹 $version]"
 style = "fg:base bg:peach"
 symbol = ""
 
@@ -298,16 +343,16 @@ threshold = 3
 disabled = false
 format = "$symbol"
 map_symbol = true
-not_executable_symbol = "[](fg:teal bg:pink)[  $common_meaning](fg:red bg:pink)"
-not_found_symbol = "[](fg:teal bg:pink)[ 󰩌 $common_meaning](fg:red bg:pink)"
-sigint_symbol = "[](fg:teal bg:pink)[  $signal_name](fg:red bg:pink)"
-signal_symbol = "[](fg:teal bg:pink)[ ⚡ $signal_name](fg:red bg:pink)"
+not_executable_symbol = "[](fg:teal bg:pink)[  $common_meaning](fg:red bg:pink)[](fg:pink)"
+not_found_symbol = "[](fg:teal bg:pink)[ 󰩌 $common_meaning](fg:red bg:pink)[](fg:pink)"
+sigint_symbol = "[](fg:teal bg:pink)[  $signal_name](fg:red bg:pink)[](fg:pink)"
+signal_symbol = "[](fg:teal bg:pink)[ ⚡ $signal_name](fg:red bg:pink)[](fg:pink)"
 style = ""
-success_symbol = "[](fg:teal bg:blue)"
-symbol = "[](fg:teal bg:pink)[  $status](fg:red bg:pink)"
+success_symbol = "[](fg:teal)"
+symbol = "[](fg:teal bg:pink)[  $status](fg:red bg:pink)[](fg:teal)"
 
 [sudo]
-disabled = false
+disabled = true
 format = "[ $symbol]($style)"
 style = "fg:rosewater bg:surface2"
 symbol = "󰌋"
@@ -318,19 +363,165 @@ style = "fg:base bg:peach"
 symbol = ""
 
 [time]
-disabled = true
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = '%H:%M'
 
 [username]
 format = "[ $user]($style)"
 show_always = true
 style_root = "fg:red bg:surface2"
 style_user = "fg:green bg:surface2"
+
 [username.aliases]
-daystorm = "󰄛"
-user = "󰄛"
-root = "󰱯"
+"vulcan.gheorghe" = ""
+user = ""
+root = "󰇴"
+
+[hostname.aliases]
+0624EITR1018 = "peregrine"
 
 [zig]
 format = "[ $symbol]($style)"
 style = "fg:base bg:peach"
 symbol = ""
+
+# https://gist.github.com/ashleysommer/441d1df2cbd6a03113cd85f946f9cc0d
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[palettes.monokai_dark_gogh]
+color_fg0 = '#f8f8f2'
+color_bg0 = '#272822'
+color_bg1 = '#3c3836'
+color_bg3 = '#75715e'
+color_blue = '#66d9ef'
+color_aqua = '#2aa198'
+color_green = '#a6e22e'
+color_orange = '#fc9867'
+color_purple = '#ab9df2'
+color_red = '#ff6188'
+color_yellow = '#ffd866'
+
+# https://starship.rs/presets/catppuccin-powerline
+
+[palettes.catppuccin_mocha]
+base = "#1e1e2e"
+blue = "#89b4fa"
+crust = "#11111b"
+flamingo = "#f2cdcd"
+green = "#a6e3a1"
+lavender = "#b4befe"
+mantle = "#181825"
+maroon = "#eba0ac"
+mauve = "#cba6f7"
+overlay0 = "#6c7086"
+overlay1 = "#7f849c"
+overlay2 = "#9399b2"
+peach = "#fab387"
+pink = "#f5c2e7"
+red = "#f38ba8"
+rosewater = "#f5e0dc"
+sapphire = "#74c7ec"
+sky = "#89dceb"
+subtext0 = "#a6adc8"
+subtext1 = "#bac2de"
+surface0 = "#313244"
+surface1 = "#45475a"
+surface2 = "#585b70"
+teal = "#94e2d5"
+text = "#cdd6f4"
+yellow = "#f9e2af"
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
+
+[palettes.catppuccin_latte]
+rosewater = "#dc8a78"
+flamingo = "#dd7878"
+pink = "#ea76cb"
+mauve = "#8839ef"
+red = "#d20f39"
+maroon = "#e64553"
+peach = "#fe640b"
+yellow = "#df8e1d"
+green = "#40a02b"
+teal = "#179299"
+sky = "#04a5e5"
+sapphire = "#209fb5"
+blue = "#1e66f5"
+lavender = "#7287fd"
+text = "#4c4f69"
+subtext1 = "#5c5f77"
+subtext0 = "#6c6f85"
+overlay2 = "#7c7f93"
+overlay1 = "#8c8fa1"
+overlay0 = "#9ca0b0"
+surface2 = "#acb0be"
+surface1 = "#bcc0cc"
+surface0 = "#ccd0da"
+base = "#eff1f5"
+mantle = "#e6e9ef"
+crust = "#dce0e8"
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
