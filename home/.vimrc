@@ -2,9 +2,11 @@ if filereadable(glob("~/.vimrc.vundle"))
     source ~/.vimrc.vundle
 
     set termguicolors
-    colorscheme catppuccin_mocha
 
-    let g:airline_theme = 'catppuccin_mocha'
+	colorscheme monokai
+	let g:monokai_termcolors=256 
+
+	let g:airline_theme='base16_monokai'
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
 
