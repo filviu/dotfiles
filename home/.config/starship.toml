@@ -307,7 +307,7 @@ style = "fg:base bg:peach"
 symbol = "󰌟"
 
 [python]
-format = "[ $symbol]($style)[🔹 $version]"
+format = '[ $symbol ($version) ]($style)'
 style = "fg:base bg:peach"
 symbol = ""
 
