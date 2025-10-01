@@ -1,4 +1,3 @@
-
 export PATH="/opt/homebrew/opt/curl/bin:$PATH:~/bin"
 export MC_SKIN="$HOME/.config/mc/jult.ini"
 
