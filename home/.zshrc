@@ -1,9 +1,11 @@
 
-export PATH=$PATH:~/bin
+export PATH="/opt/homebrew/opt/curl/bin:$PATH:~/bin"
 export MC_SKIN="$HOME/.config/mc/jult.ini"
 
 alias mc="SHELL=/bin/bash mc"
 alias ll="ls -l --color=auto"
+
+export HOMEBREW_NO_ENV_HINTS=1
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
