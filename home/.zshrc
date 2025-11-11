@@ -1,10 +1,13 @@
-export PATH="/opt/homebrew/opt/curl/bin:$PATH:~/bin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/curl/bin:$HOME/bin:$PATH"
 export MC_SKIN="$HOME/.config/mc/jult.ini"
 
-alias mc="SHELL=/bin/bash mc"
-alias ll="ls -l --color=auto"
-
 export HOMEBREW_NO_ENV_HINTS=1
+
+# mc is slow on macOS otherwise
+alias mc="SHELL=/bin/bash mc"
+alias mcedit="SHELL=/bin/bash mc -e"
+
+alias ll="ls -l --color=auto"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
@@ -19,7 +22,6 @@ docker() {
      /opt/homebrew/bin/docker "$@"
   fi
 }
-
 
 # source antidote https://antidote.sh/
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
@@ -44,8 +46,6 @@ fi
 eval "$(atuin init zsh --disable-up-arrow)"
 . <(atuin gen-completions --shell zsh)
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 if command -v helm &>/dev/null; then
     source <(helm completion zsh)
 fi
@@ -54,5 +54,6 @@ if command -v docker &>/dev/null; then
     source <(docker completion zsh)
 fi
 
-# ansible older for CentOS 7
-export PATH="/opt/homebrew/opt/ansible@9/bin:$PATH"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
+
