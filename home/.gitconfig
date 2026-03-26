@@ -1,12 +1,12 @@
 [user]
-   email = 2470335+filviu@users.noreply.github.com
-   name = filviu
+	email = silviu.vulcan@emag.ro
+	name = silviu.vulcan
 
 [color]
    ui = true
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/vulcan.gheorghe/.gitignore
 
 [credential]
 	useHttpPath = true
@@ -36,3 +36,11 @@
 [include]
    path = .gitconfig-credentials
    path = .gitconfig-local
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[diff]
+	tool = meld

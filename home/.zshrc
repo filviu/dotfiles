@@ -1,4 +1,4 @@
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/curl/bin:$HOME/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/curl/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 export MC_SKIN="$HOME/.config/mc/jult.ini"
 
 export HOMEBREW_NO_ENV_HINTS=1
@@ -56,4 +56,3 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 test -e "${HOME}/.zshrc.local" && source "${HOME}/.zshrc.local"
-
