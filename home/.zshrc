@@ -16,10 +16,13 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 # still working but useless for the other platforms
 # since I'm not developing anything for arm64 this makes sense all the time
 docker() {
- if [[ `uname -m` == "arm64" ]] && [[ "$1" == "run" || "$1" == "build" ]]; then
-    /opt/homebrew/bin/docker "$1" --platform linux/amd64 "${@:2}"
+  local bin
+  bin=$(command -v docker 2>/dev/null) || {echo "docker: command not found" >&2; return 127; }
+
+  if [[ `uname -m` == "arm64" ]] && [[ "$1" == "run" || "$1" == "build" ]]; then
+    "$bin" "$1" --platform linux/amd64 "${@:2}"
   else
-     /opt/homebrew/bin/docker "$@"
+     "$bin" "$@"
   fi
 }
 

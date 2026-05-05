@@ -33,7 +33,7 @@ else
 fi
 
 export MC_SKIN="$HOME/.config/mc/jult.ini"
-export PATH=$PATH:~/bin:~/.local/bin/:~/.cargo/bin/
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin/:$HOME/.cargo/bin/
 
 # remove mint/ubuntu command not found message
 unset command_not_found_handle
@@ -67,7 +67,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     if [ -z "$LS_COLORS" ]; then
-        test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+        test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
     fi
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
@@ -97,7 +97,7 @@ if command -v grc &> /dev/null; then
   fi
 fi
 
-[[ -f ~/.local/share/blesh/ble.sh ]] && source ~/.local/share/blesh/ble.sh
+[[ -f $HOME/.local/share/blesh/ble.sh ]] && source $HOME/.local/share/blesh/ble.sh
 
 # bookmarks - inspired from
 # https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
@@ -109,7 +109,7 @@ if [ -d "$HOME/.bookmarks" ]; then
     _goto()
     {
         local IFS=$'\n'
-        COMPREPLY=( $( compgen -W "$(/bin/ls ~/.bookmarks)" -- ${COMP_WORDS[COMP_CWORD]}))
+        COMPREPLY=( $( compgen -W "$(/bin/ls $HOME/.bookmarks)" -- ${COMP_WORDS[COMP_CWORD]}))
     } && complete -F _goto goto go g
 fi
 
@@ -154,15 +154,15 @@ if command -v terraform &>/dev/null; then
     complete -C /usr/bin/terraform terraform
 fi
 
-source ~/.LESS_TERMCAP 2>/dev/null || true
-source ~/.bash_aliases 2>/dev/null || true
+source $HOME/.LESS_TERMCAP 2>/dev/null || true
+source $HOME/.bash_aliases 2>/dev/null || true
 
 # custom aliases, settings
-source ~/.bash_completion.local 2>/dev/null || true
-source ~/.bashrc.local 2>/dev/null || true
-source ~/.bashrc.todo 2>/dev/null || true
+source $HOME/.bash_completion.local 2>/dev/null || true
+source $HOME/.bashrc.local 2>/dev/null || true
+source $HOME/.bashrc.todo 2>/dev/null || true
 
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+[[ -f $HOME/.bash-preexec.sh ]] && source $HOME/.bash-preexec.sh
 
 source "$HOME/.cargo/env" 2>/dev/null || true
 
