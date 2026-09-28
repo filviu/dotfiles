@@ -17,7 +17,9 @@ fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
 # since I'm not developing anything for arm64 this makes sense all the time
 docker() {
   local bin
-  bin=$(command -v docker 2>/dev/null) || {echo "docker: command not found" >&2; return 127; }
+  # whence -p resolves the real external binary, skipping this function.
+  # (command -v docker would return the function name and recurse infinitely.)
+  bin=$(whence -p docker 2>/dev/null) || { echo "docker: command not found" >&2; return 127; }
 
   if [[ `uname -m` == "arm64" ]] && [[ "$1" == "run" || "$1" == "build" ]]; then
     "$bin" "$1" --platform linux/amd64 "${@:2}"
@@ -37,7 +39,7 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 # completion both for kubectl and k alias
-if command -v kubectl &> /dev/null; then
+if whence -p kubectl &> /dev/null; then
     source <(kubectl completion zsh)
     alias compdef k="kubectl"
     alias k="kubectl"
@@ -49,11 +51,11 @@ fi
 eval "$(atuin init zsh --disable-up-arrow)"
 . <(atuin gen-completions --shell zsh)
 
-if command -v helm &>/dev/null; then
+if whence -p helm &>/dev/null; then
     source <(helm completion zsh)
 fi
 
-if command -v docker &>/dev/null; then
+if whence -p docker &>/dev/null; then
     source <(docker completion zsh)
 fi
 
